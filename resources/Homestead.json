@@ -9,14 +9,14 @@
     ],
     "folders": [
         {
-            "map": "~/code",
-            "to": "/home/vagrant/code"
+            "map": "~/www",
+            "to": "/home/vagrant/www"
         }
     ],
     "sites": [
         {
-            "map": "homestead.test",
-            "to": "/home/vagrant/code/public"
+            "map": "dev.edisoninteractive.local",
+            "to": "/home/vagrant/www/edison-admin/public"
         }
     ],
     "databases": [
@@ -25,10 +25,10 @@
     "features": [
         {
             "mariadb": false
-        }, 
+        },
         {
             "ohmyzsh": false
-        }, 
+        },
         {
             "webdriver": false
         }
