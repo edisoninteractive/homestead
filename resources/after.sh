@@ -24,3 +24,24 @@
 # Install Node.js v10.x
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #sudo apt-get install -y nodejs
+
+sudo apt-get install -y postgis postgresql-11-postgis-2.5
+sudo -u postgres psql -c "CREATE EXTENSION postgis; CREATE EXTENSION postgis_topology;" homestead
+
+php71
+cd ~/www/edison-admin
+
+composer install
+php artisan optimize
+php artisan migrate
+php artisan db:seed
+
+sudo npm install -g n
+sudo mkdir -p /usr/local/n
+sudo chown -R $(whoami) /usr/local/n
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+n 10
+
+npm install
+npm rebuild node-sass
+npm run dev
